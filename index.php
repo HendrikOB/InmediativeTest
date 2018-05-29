@@ -1,3 +1,16 @@
+<?php
+
+// Read JSON file
+$json = file_get_contents('db.json');
+
+//Decode JSON
+$json_data = json_decode($json,true);
+
+//Print data
+print_r($json_data);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +20,7 @@
 	<title>Document</title>
 </head>
 <body>
-
-	<h1>Hello World!</h1>
-
+	<h1><?php echo $json_data['title'] ?></h1>
 </body>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
