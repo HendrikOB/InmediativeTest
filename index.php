@@ -6,9 +6,6 @@ $json = file_get_contents('db.json');
 //Decode JSON
 $json_data = json_decode($json,true);
 
-//Print data
-print_r($json_data);
-
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +14,8 @@ print_r($json_data);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>InmediativeTest</title>
+	<link rel="stylesheet" href="assets/css/main.min.css">
 </head>
 <body>
 	<h1><?php echo $json_data['title'] ?></h1>
