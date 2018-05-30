@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "graceful-fs": "^4.1.11",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "lightslider": "^1.1.6"
   },
   "devDependencies": {
     "clean-css": "^4.1.11",
