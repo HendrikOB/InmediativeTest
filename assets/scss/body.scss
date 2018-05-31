@@ -6,6 +6,29 @@ body {
 	background-color: black !important;
 }
 
+.navbar-brand{
+	margin: 0 0 0 60px;
+}
+
+.nav-pills{
+	margin-right: 50px;
+}
+
 .nav-link{
-	color: white;
+	color: black;
+	background-color: white;
+	border-radius: 15% !important;
+	margin-right: 10px;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+
+.rectangle{
+	width:300px;
+	height:520px;
+	border-radius: 10px;
+	background-color: #666666;
+	position: absolute;
+	right: 50px;
+	top: -40px;
 }

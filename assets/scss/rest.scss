@@ -1,6 +1,38 @@
+.nav-link.active{
+	background-color: #666666 !important;
+}
+.download{
+	width: 216px;
+	height: 64px;
+	border-radius: 8px !important;
+	margin-top: -90px;
+	font-size: 2em !important;
+}
+
+.list-unstyled{
+	font-size: 0.9em;
+}
 
 p{
 	margin-bottom: 0 !important;
+}
+
+.prev,
+.next {
+
+  cursor: pointer;
+  width: auto;
+  padding: 16px;
+  margin-top: 3%;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+	-webkit-user-select: none;
+	color: #295BFF !important;
+	padding: 16px 0 16px 0;
+
 }
 
 footer {
@@ -9,6 +41,101 @@ footer {
 	background-color: #666666;
 	bottom: 0;
 	width: 100%;
-	height: 100px;
-  line-height: 100px;
+	height: 160px;
+  	line-height: 160px;
+}
+
+.box-text{
+	font-size: 0.9em;
+}
+
+.mensaje{
+	font-size: 1.8em;
+}
+
+@media only screen and (max-width: 1200px) {
+	.rectangle{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	
+	.download{
+		margin-left: 40% !important;
+	}
+	
+	.card-5 {
+		display: none !important;
+	}
+	.card-6 {
+		display: none !important;
+	}
+	.card-7 {
+		display: none !important;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	
+	.navbar-brand{
+		margin: 0 0 0 0px;
+	}
+
+	.nav {
+		position: absolute;
+		top: 70px;
+	}
+
+	.nav-pills{
+		margin-right: 0;
+	}
+
+	.nav-link {
+		background-color: #666666;
+		color: white;
+	}
+
+	.jumbotron-container{
+		margin-top: 40px;
+	}
+
+	.jumbotron .row{
+		height: 300px !important;
+	}
+
+	.download{
+		margin-left: 22% !important;
+	}
+
+	.card-deck{
+
+		flex-direction: inherit !important;
+	}
+	
+	.card-deck .card {
+		width: 31%;
+		flex-direction: column;
+  }
+  .prev, .next {
+	margin-top: 5%;
+  }
+  .card-4 {
+	display: none !important;
+
+	}
+	.card-5 {
+		display: none !important;
+	}
+	.card-6 {
+		display: none !important;
+	}
+	.card-7 {
+		display: none !important;
+	}
+
+	.mensaje{
+		height: 150px;
+		font-size: 1.4em;
+	}
 }

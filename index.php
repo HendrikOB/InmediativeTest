@@ -23,26 +23,29 @@ $json_data = json_decode($json,true);
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 <body>
-	<nav id="navbar-example2" class="navbar navbar-dark bg-black">
+	<nav class="navbar navbar-dark bg-black">
 		<a class="navbar-brand" href="#"><?php echo $json_data['title'] ?></a>
-		<ul class="nav nav-pills">	 
-			<?php 
+		<ul class="nav nav-pills">
+			<li class='nav-item'><a class='nav-link' href="<?php echo $json_data['menu'][0]['href'] ?>"><?php echo $json_data['menu'][0]['title'] ?></a></li>
+			<li class='nav-item'><a class='nav-link active' href="<?php echo $json_data['menu'][1]['href'] ?>"><?php echo $json_data['menu'][1]['title'] ?></a></li>
+			<li class='nav-item'><a class='nav-link' href="<?php echo $json_data['menu'][2]['href'] ?>"><?php echo $json_data['menu'][2]['title'] ?></a></li>
+			 <?php 
 			
-				foreach ($json_data['menu'] as $val){
+				/* foreach ($json_data['menu'] as $val){
 
 					$link = $val["href"];
 					$title = $val["title"];
 				
-					echo "<li class='nav-item'><a class='nav-link' href='$link'>$title</a></li>";
-
-				}	
+					 echo "<li class='nav-item'><a class='nav-link' href='$link'>$title</a></li>";
+						
+				}	 */
 			?>
 		</ul>
 	</nav>
 
 	<br>
 
-	<div class="container">
+	<div class="container jumbotron-container">
 		<div class="jumbotron">
 			<div class="row">
    			<div class="col-sm-7">
@@ -50,7 +53,8 @@ $json_data = json_decode($json,true);
 						<hr class="my-4">
 						<p><?php echo $json_data['jumbotron']['subtitle'] ?></p>
    			</div>
-   			<div class="col-sm-auto">
+   			<div class="col-sm">
+					<div class="rectangle"></div>
    			</div>
   			</div>
 		</div>
@@ -59,7 +63,7 @@ $json_data = json_decode($json,true);
 	<div class="container">
 		<div class="row justify-content-md-center">
 			<div class="col-sm-7">
-				<button type="button" class="btn btn-secondary">Descarga</button>
+				<button type="button" class="btn btn-secondary download">Descarga</button>
 			</div>
 			<div class="col-sm-auto">
 					
@@ -73,7 +77,7 @@ $json_data = json_decode($json,true);
 		<div class="row">
 			<div class="col-sm">
 				<h3><?php echo $json_data['box']['title'] ?></h3>
-				<p><?php echo $json_data['box']['text'] ?></p>
+				<p class="box-text"><?php echo $json_data['box']['text'] ?></p>
 			</div>
 			<div class="col-sm">
 				<h3>Moment</h3>
@@ -105,16 +109,23 @@ $json_data = json_decode($json,true);
 				<h3>Screenshots</h3>
 
 				<div class="card-deck">
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 					<?php 
 				
-						foreach ($json_data['slide'] as $slid){
+						foreach (array_slice($json_data['slide'],0,7) as $slid){
 
 							$imgs = $slid;
-							
-							echo "<div class='card'><img class='card-img-top' src='$imgs' alt='Card image cap'></div>";
+							$k = $k+1;
+							$counter = $k;
+							echo "<div class='card card-$counter'><img class='card-img-top' src='$imgs' alt='Card image cap'></div>";
 
 						}	
 					?>
+
+					<!-- Next and previous buttons -->
+  
+  					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
 					
 				</div>
 			</div>	
@@ -125,7 +136,7 @@ $json_data = json_decode($json,true);
 
 <footer class="footer">
       <div class="container">
-        <p>Gracias por tomarte este tiempo :)</p>
+        <p class="mensaje">Gracias por tomarte este tiempo :)</p>
       </div>
     </footer>
 	 
